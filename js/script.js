@@ -23,6 +23,11 @@ function timer() {
     tempo.innerHTML = (segundos < 10)
             ? minutos + ":0" + segundos
             : minutos + ":" + segundos
+    if( minutos == 0 && segundos == 0 ) {
+        gameOver.style.display = "block"
+        clearInterval(temporizador)
+        clearInterval(movimento)
+    }
 }
 
 //Evento de clique sobre a mosca
